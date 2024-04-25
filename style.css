@@ -67,13 +67,9 @@ body * {
 /* switch */
 #switch {
     width: 64px;
+    height: 32px;
     margin: 4px auto;
-}
-
-#switch {
-    width: 64px;
-    margin: 4px auto;
-    position: relative; /* Adicionando position relative para o switch */
+    position: relative;
 }
 
 #switch button {
@@ -83,9 +79,8 @@ body * {
     border: 0;
     border-radius: 50%;
     position: absolute;
-    top: 50%;
-    left: 0%; /* Posicionando o botão no centro horizontal */
-    transform: translate(-0%, -50%); /* Centralizando o botão vertical e horizontalmente */
+    top: 0;
+    left: 0;
     z-index: 1;
     animation: slide-back 0.2s;
 }
@@ -96,12 +91,25 @@ body * {
 
 #switch span {
     display: block;
-    width: px;
+    width: 64px;
     height: 24px;
     background: var(--surface-color);
     border: 1px solid var(--stroke-color);
     backdrop-filter: blur(4px);
     border-radius: 9999px;
+}
+
+/* Adicionando media query para ajustar o switch em telas menores */
+@media (max-width: 600px) {
+    #switch {
+        width: 48px; /* Reduzindo o tamanho do switch */
+        height: 24px; /* Reduzindo a altura do switch */
+    }
+
+    #switch button {
+        width: 24px; /* Reduzindo o tamanho do botão */
+        height: 24px; /* Reduzindo o tamanho do botão */
+    }
 }
 
 
