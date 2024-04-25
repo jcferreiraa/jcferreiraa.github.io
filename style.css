@@ -54,15 +54,36 @@ body * {
 }
 
 /* profile */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
 #profile {
     text-align: center;
-    padding: 50px 0; /* Ajustando o padding para ser mais responsivo */
+    padding: 100px;
+    position: relative;
 }
 
 #profile img {
-    max-width: 100%; /* Garantindo que a imagem não ultrapasse o contêiner */
-    height: auto; /* Mantendo a proporção da imagem */
+    width: 250px;
+    position: asolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: -1;
+    animation: pulse 2s infinite; /* Aplicando a animação de pulsação */
 }
+
 
 /* switch */
 #switch {
