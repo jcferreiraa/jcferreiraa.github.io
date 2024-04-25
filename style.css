@@ -14,7 +14,7 @@
 }
 
 /* media queries */
-@media (min-width: 700px) {
+@media (min-width: 600px) {
     :root {
         --bg-url: url(./assets/bg-desktop.jpg);
     }
@@ -36,7 +36,10 @@
 
 body {
     background: var(--bg-url) no-repeat top center/cover;
-    height: 100vh;
+    min-height: 100vh; /* Mudança para min-height para ocupar pelo menos a altura da tela */
+    display: flex; /* Usando flexbox para ajustar o conteúdo verticalmente */
+    justify-content: center; /* Alinhamento vertical centralizado */
+    align-items: center; /* Alinhamento horizontal centralizado */
 }
 
 body * {
@@ -47,29 +50,22 @@ body * {
 #container {
     width: 100%;
     max-width: 588px;
-    margin: 56px auto 0px;
     padding: 0 24px;
 }
 
 /* profile */
 #profile {
     text-align: center;
-    padding: 100px;
+    padding: 50px 0; /* Ajustando o padding para ser mais responsivo */
 }
 
 #profile img {
-    width: 250px;
-}
-
-#profile p {
-    font-weight: 500;
-    line-height: 24px;
-    margin-top: 10px;
+    max-width: 100%; /* Garantindo que a imagem não ultrapasse o contêiner */
+    height: auto; /* Mantendo a proporção da imagem */
 }
 
 /* switch */
 #switch {
-    position: relative;
     width: 64px;
     margin: 4px auto;
 }
@@ -85,7 +81,6 @@ body * {
     left: 0;
     z-index: 1;
     transform: translateY(-50%);
-
     animation: slide-back 0.2s;
 }
 
@@ -121,7 +116,6 @@ ul li a {
     align-items: center;
     justify-content: center;
     padding: 16px 24px;
-    /* background: var(--surface-color); */
     border: 1px solid var(--stroke-color);
     border-radius: 8px;
     backdrop-filter: blur(4px);
@@ -185,4 +179,3 @@ footer {
         left: 0;
     }
 }
-
